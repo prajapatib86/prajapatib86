@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 from urllib import parse
+import ssl
 
 
 class LinkFinder(HTMLParser):

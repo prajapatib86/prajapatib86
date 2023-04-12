@@ -3,9 +3,18 @@ from queue import Queue
 from spider import Spider
 from domain import *
 from general import *
+import ssl
+import urllib.request
 
-PROJECT_NAME = 'Nexus-help'
+
+#Session.verify=False
+#ssl._create_default_https_context = ssl._create_unverified_context
+
+
+PROJECT_NAME = 'Nexus'
 HOMEPAGE = 'https://help.hexagonmi.com/'
+response = urllib.request.urlopen(HOMEPAGE, context=ssl._create_unverified_context())
+
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
 CRAWLED_FILE = PROJECT_NAME + '/crawled.txt'
