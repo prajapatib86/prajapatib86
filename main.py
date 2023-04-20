@@ -6,14 +6,18 @@ from general import *
 import ssl
 import urllib.request
 
+PROJECT_NAME = 'GOOGLE-SOURCE'
+HOMEPAGE = 'https://opensource.google/documentation/reference'
+
+#context = ssl.create_default_context()
+#context.check_hostname = False
+#context.verify_mode = ssl.CERT_NONE
+#response = urllib.request.urlopen(HOMEPAGE, context=context)
 
 #Session.verify=False
 #ssl._create_default_https_context = ssl._create_unverified_context
 
-
-PROJECT_NAME = 'Nexus'
-HOMEPAGE = 'https://help.hexagonmi.com/'
-response = urllib.request.urlopen(HOMEPAGE, context=ssl._create_unverified_context())
+#response = urllib.request.urlopen(HOMEPAGE, context=ssl._create_unverified_context())
 
 DOMAIN_NAME = get_domain_name(HOMEPAGE)
 QUEUE_FILE = PROJECT_NAME + '/queue.txt'
